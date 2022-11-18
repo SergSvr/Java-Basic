@@ -1,8 +1,5 @@
 package lesson2;
 
-public enum Brand{
-    Apple,
-    Samsung,
-    Nokia,
-    Xiaomi;
+public enum Brand {
+    APPLE, SAMSUNG, NOKIA, XIAOMI;
 }

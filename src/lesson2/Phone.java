@@ -16,8 +16,7 @@ public class Phone {
         this.Brand = brand;
         this.Model = model;
         this.Price = price;
-        this.Screensize = 5.0;
-        this.Charger = "5W";
+        this.Charger = "5W";//default value
     }
 
     public Phone(Brand brand, String model, double price, double scr, String chr) {
@@ -36,10 +35,21 @@ public class Phone {
         return Charger;
     }
 
-    @Override
+    public void setScreensize(double screensize) {
+        this.Screensize = screensize;
+    }
+
+    public double getScreensize() {
+        return Screensize;
+    }
 
     public String toString() {
-        return "This phone is " + Brand + " " + Model + " price is " + Price + " Screensize " + Screensize + " Charger " + Charger;
+        String scr;
+        if (Screensize == 0)
+            scr = Double.toString(Screensize);
+        else
+            scr = "not set";
+        return "This phone is " + Brand + " " + Model + " price is " + Price + " Screensize " + scr + " Charger " + Charger;
     }
 
     public static void main(String[] args) {

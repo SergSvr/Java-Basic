@@ -15,13 +15,13 @@ public class task {
         System.out.println("123.2*123=" + Calculator.mul(123.2, 123));
         System.out.println("50000*123=" + Calculator.mul(50000L, 123));
 //task #2
-        Phone ph1 = new Phone(lesson2.Brand.Nokia, "3310", 11000);
+        Phone ph1 = new Phone(lesson2.Brand.NOKIA, "3310", 11000);
         System.out.println(ph1);
         ph1.setCharger("10W");
         System.out.println(ph1);
         Phone ph2 = new Phone();
         System.out.println(ph2);
-        ph2=new Phone(Brand.Xiaomi, "10s", 19000, 6.2, "15W");
+        ph2 = new Phone(Brand.XIAOMI, "10s", 19000, 6.2, "15W");
         System.out.println(ph2);
     }
 }
