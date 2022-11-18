@@ -2,54 +2,54 @@ package lesson2;
 
 
 public class Phone {
-    private Brand Brand;
-    private String Model;
-    private double Price;
-    private double Screensize;
-    private String Charger;
+    private Brand brand;
+    private String model;
+    private double price;
+    private double screenSize;
+    private String charger;
 
     public Phone() {
         System.out.println("No parameters provided");
     }
 
     public Phone(Brand brand, String model, double price) {
-        this.Brand = brand;
-        this.Model = model;
-        this.Price = price;
-        this.Charger = "5W";//default value
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+        this.charger = "5W";//default value
     }
 
     public Phone(Brand brand, String model, double price, double scr, String chr) {
-        this.Brand = brand;
-        this.Model = model;
-        this.Price = price;
-        this.Screensize = scr;
-        this.Charger = chr;
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+        this.screenSize = scr;
+        this.charger = chr;
     }
 
     public void setCharger(String charger) {
-        this.Charger = charger;
+        this.charger = charger;
     }
 
     public String getCharger() {
-        return Charger;
+        return charger;
     }
 
-    public void setScreensize(double screensize) {
-        this.Screensize = screensize;
+    public void setScreenSize(double screenSize) {
+        this.screenSize = screenSize;
     }
 
-    public double getScreensize() {
-        return Screensize;
+    public double getScreenSize() {
+        return screenSize;
     }
 
     public String toString() {
         String scr;
-        if (Screensize == 0)
-            scr = Double.toString(Screensize);
+        if (screenSize == 0)
+            scr = Double.toString(screenSize);
         else
             scr = "not set";
-        return "This phone is " + Brand + " " + Model + " price is " + Price + " Screensize " + scr + " Charger " + Charger;
+        return "This phone is " + brand + " " + model + " price is " + price + " Screensize " + scr + " Charger " + charger;
     }
 
     public static void main(String[] args) {
