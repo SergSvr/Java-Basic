@@ -3,6 +3,8 @@ package lesson4;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static lesson4.Task2.arrayInput;
+
 public class Task1 {
     public static void main(String[] args) {
         //subtask1
@@ -30,23 +32,16 @@ public class Task1 {
         //subtask3
         System.out.println("\nSubtask 3");
         int[] a = Task1.getVars();
-        if (a[0] + a[1] == a[2])
-            System.out.println("true");
-        else
-            System.out.println("false");
+            System.out.println(a[0] + a[1] == a[2]);
 
         //subtask4
         System.out.println("Subtask 4");
         a = Task1.getVars();
-        if (a[0] < a[1] && a[1] < a[2])
-            System.out.println("true");
-        else
-            System.out.println("false");
+            System.out.println(a[0] < a[1] && a[1] < a[2]);
 
         //subtask5
         System.out.println("\nSubtask 5");
-        int[] array1 = {3, -3, 7, 4, 5, 4, 3};
-       // array1= new int[]{}; //test
+        int[] array1 = arrayInput();
         System.out.println("array=" + Arrays.toString(array1));
         if (array1.length != 0 && (array1[0] == 3 || array1[array1.length - 1] == 3))
             System.out.println("true");
@@ -55,9 +50,8 @@ public class Task1 {
 
         //subtask6
         System.out.println("\nSubtask 6");
-        int[] array2 = {2, -3, 7, 4, 5, 4, 33, 1};
-        // array2=new int[]{}; //test
-        System.out.println("array=" + Arrays.toString(array2) + "\n" + subtask6(array2));
+        int[] array2 = arrayInput();
+        System.out.println("array=" + Arrays.toString(array2) + "\n" + check1or3(array2));
     }
 
     public static int[] getVars() {
@@ -73,7 +67,7 @@ public class Task1 {
         return a;
     }
 
-    private static boolean subtask6(int[] a) {
+    private static boolean check1or3(int[] a) {
         for (int j : a) {
             if (j == 1 || j == 3) {
                 return true;
