@@ -42,11 +42,7 @@ public class Task1 {
         //subtask5
         System.out.println("\nSubtask 5");
         int[] array1 = arrayInput();
-        System.out.println("array=" + Arrays.toString(array1));
-        if (array1.length != 0 && (array1[0] == 3 || array1[array1.length - 1] == 3))
-            System.out.println("true");
-        else
-            System.out.println("false");
+        System.out.println("array=" + Arrays.toString(array1)+"\n"+checkFirstLast3(array1));
 
         //subtask6
         System.out.println("\nSubtask 6");
@@ -74,5 +70,9 @@ public class Task1 {
             }
         }
         return false;
+    }
+
+    private static boolean checkFirstLast3(int[] a){
+        return (a.length != 0 && (a[0] == 3 || a[a.length - 1] == 3));
     }
 }
