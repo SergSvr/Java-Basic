@@ -1,8 +1,5 @@
 package lesson5;
 
-import com.oracle.xmlns.internal.webservices.jaxws_databinding.SoapBindingParameterStyle;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task1 {
@@ -67,7 +64,6 @@ public class Task1 {
 
     public static boolean isPolyndrom(String s) {
         StringBuilder buf = new StringBuilder().append(s);
-        ;
         return (s.equals(buf.reverse().toString()));
     }
 
