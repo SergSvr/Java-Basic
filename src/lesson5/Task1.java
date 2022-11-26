@@ -21,7 +21,15 @@ public class Task1 {
 
         //subtask 3
         System.out.print("\nВведите текст:");
-        System.out.println("Цензурированная версия:" + replaceBadWord(getWord()));
+        str = getWord();
+        System.out.print("\nВведите слово для замены:");
+        String pattern = getWord();
+        if (pattern.length()>0) {
+            System.out.print("\nНа что заменять:");
+            String repl = getWord();
+            System.out.println("Цензурированная версия:" + replaceBadWord(str, pattern, repl));
+        } else
+            System.out.println("Цензурированная версия:" + replaceBadWord(str));
 
         //subtask 4
         System.out.print("\nВведите текст:");
@@ -63,12 +71,16 @@ public class Task1 {
     }
 
     public static boolean isPolyndrom(String s) {
-        StringBuilder buf = new StringBuilder().append(s);
-        return (s.equals(buf.reverse().toString()));
+        StringBuilder buf = new StringBuilder(s.trim().toLowerCase());
+        return (s.trim().toLowerCase().equals(buf.reverse().toString()));
     }
 
     public static String replaceBadWord(String s) {
         return s.replaceAll("бяка", "[вырезано цензурой]");
+    }
+
+    public static String replaceBadWord(String s, String pattern, String repl) {
+        return s.replaceAll(pattern, repl);
     }
 
     public static int substringCount(String str, String sub) {
