@@ -37,10 +37,13 @@ public class Man {
         return this.name;
     }
 
+    public String getInfo(){
+        return "Возраст: "+this.age;
+    }
     public static void main(String[] args) {
         Man man1 = new Man();
         man1.setAge();
         man1.setName();
-        System.out.println(man1.getName()+" возраст "+ man1.getAge());
+        System.out.println(man1.getInfo());
     }
 }

@@ -12,16 +12,14 @@ public class ChildOfMan extends Man {
         return "Дочерний класс: "+this.name;
     }
 
-    @Override
-    public void setName() {
-        System.out.print("\nВведите имя(дочерний класс): ");
-        this.name = scan.next();
+    public String getInfo(){
+        return "Имя пользователя: "+this.name;
     }
 
     public static void main(String[] args) {
         ChildOfMan man1 = new ChildOfMan();
         man1.setAge();
         man1.setName();
-        System.out.println(man1.getName()+" возраст "+ man1.getAge());
+        System.out.println(man1.getInfo());
     }
 }
