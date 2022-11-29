@@ -10,22 +10,9 @@ public class Man {
     public Man() {
     }
 
-    public Man(String name) {
-        this.name = name;
-    }
-
-    public Man(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
     public void setAge() {
         System.out.println("Введите возраст: ");
         this.age = scan.nextInt();
-    }
-
-    public int getAge() {
-        return this.age;
     }
 
     public void setName() {
@@ -33,13 +20,10 @@ public class Man {
         this.name = scan.next();
     }
 
-    public String getName() {
-        return this.name;
+    public String getInfo() {
+        return "Возраст: " + this.age;
     }
 
-    public String getInfo(){
-        return "Возраст: "+this.age;
-    }
     public static void main(String[] args) {
         Man man1 = new Man();
         man1.setAge();
