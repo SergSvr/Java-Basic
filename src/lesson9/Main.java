@@ -3,9 +3,8 @@ package lesson9;
 import java.util.*;
 
 public class Main {
-    public static ArrayList<Integer> noDuplicates(ArrayList<Integer> in) {
-        Set<Integer> set = new LinkedHashSet<>(in);
-        return new ArrayList<>(set);
+    public static Collection<Integer> noDuplicates(Collection<Integer> in) {
+        return new HashSet<>(in);
     }
 
     public static void addValues(List<Integer> list) {
