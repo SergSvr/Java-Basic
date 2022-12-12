@@ -1,13 +1,16 @@
 package multithreading;
 
+import java.util.concurrent.CountDownLatch;
+
 public class MyThread extends Thread implements ThreadInterface {
     protected int counter;
     private static int taskCount = 0;
     private final int id = taskCount++;
+    private final CountDownLatch latch;
 
-
-    public MyThread(int counter) {
+    public MyThread(int counter, CountDownLatch latch) {
         this.counter = counter;
+        this.latch = latch;
     }
 
     public int getThisId() {
@@ -22,18 +25,18 @@ public class MyThread extends Thread implements ThreadInterface {
             System.out.print("thr#" + id + "(" + i + ") ");
             MyThread.yield();
         }
+        latch.countDown();
     }
 
     public static void main(String[] args) throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(10);
         for (int i = 0; i < 10; i++) {
-            MyThread temp = new MyThread(100);
+            MyThread temp = new MyThread(100, latch);
             ThreadInterface.addToList(temp);
             System.out.print("\nThread #" + i + " status:" + temp.getState());
             temp.start();
         }
-        for (MyThread temp : ThreadInterface.getList()) {
-            temp.join();
-        }
+        latch.await();
         for (MyThread temp : ThreadInterface.getList()) {
             System.out.print("\nThread #" + (temp.getThisId()) + " status:" + temp.getState());
         }
