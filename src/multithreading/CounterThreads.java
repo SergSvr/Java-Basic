@@ -1,6 +1,5 @@
 package multithreading;
 
-import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class CounterThreads extends Thread {
@@ -24,16 +23,11 @@ public class CounterThreads extends Thread {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList<CounterThreads> Arr = new ArrayList<>();
+    public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 100; i++) {
             CounterThreads temp = new CounterThreads(i);
-            Arr.add(temp);
             temp.start();
-        }
-        for (CounterThreads temp : Arr) {
-            while (temp.getState() != State.TERMINATED) {
-            }
+            temp.join();
         }
         System.out.println("Result: " + CounterThreads.counter.getCount());
     }
